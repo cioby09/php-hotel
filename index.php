@@ -53,10 +53,10 @@ $hotels = [
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 </head>
 
-<body>
-    <div class="container d-flex flex-wrap align-items-center justify-content-center">
-        <h1 class="text-center">PHP Hotel a Milano</h1>
-        <table class="table table-bordered">
+<body class="bg-dark">
+    <div class="container mt-5 d-flex flex-wrap align-items-center justify-content-center">
+        <h1 class="text-center text-white">PHP Hotel a Milano</h1>
+        <table class="table table-bordered border-white table-striped table-dark mt-5">
             <tbody>
                 <tr>
                     <th>Nome</th>
@@ -85,7 +85,7 @@ $hotels = [
                 <tr>
                     <th>Voto</th>
                     <?php foreach ($hotels as $hotel) { ?>
-                        <td class="text-center"><?php echo $hotel["vote"]; ?> / 5</td>
+                        <td class="text-center text-warning"><?php echo $hotel["vote"]; ?> / 5 &#9733;</td>
                     <?php } ?>
                 </tr>
                 <tr>
