@@ -39,9 +39,40 @@ $hotels = [
     ],
 
 ];
+?>
 
-foreach ($hotels as $hotel) {
-    foreach ($hotel as $info) {
-        echo $info;
-    }
-}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP Hotel</title>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container text-center">
+        <h1>PHP Hotel</h1>
+        <?php foreach ($hotels as $hotel) { ?>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Descrizione</th>
+                        <th scope="col">Parcheggio</th>
+                        <th scope="col">Voto</th>
+                        <th scope="col">Distanza dal centro</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <th scope="row"><?php echo $hotel['name']; ?></th>
+                </tbody>
+            </table>
+        <?php } ?>
+    </div>
+</body>
+
+</html>
