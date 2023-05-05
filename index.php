@@ -54,46 +54,34 @@ $hotels = [
 </head>
 
 <body class="bg-dark">
-    <div class="container mt-5 d-flex flex-wrap align-items-center justify-content-center">
-        <h1 class="text-center text-white">PHP Hotel a Milano</h1>
+    <div class="container text-center mt-5 d-flex flex-wrap align-items-center justify-content-center">
+        <h1 class="text-white">PHP Hotel a Milano</h1>
         <table class="table table-bordered border-white table-striped table-dark mt-5">
+            <thead>
+                <tr>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Descrizione</th>
+                    <th scope="col">Parcheggio</th>
+                    <th scope="col">Voto</th>
+                    <th scope="col">Distanza dal centro</th>
+                </tr>
+            </thead>
             <tbody>
-                <tr>
-                    <th>Nome</th>
-                    <?php foreach ($hotels as $hotel) { ?>
-                        <td class="text-center"><?php echo $hotel["name"]; ?></td>
-                    <?php } ?>
-                </tr>
-                <tr>
-                    <th>Descrizione</th>
-                    <?php foreach ($hotels as $hotel) { ?>
-                        <td class="text-center"><?php echo $hotel["description"]; ?></td>
-                    <?php } ?>
-                </tr>
-                <tr>
-                    <th>Parcheggio</th>
-                    <?php foreach ($hotels as $hotel) { ?>
-                        <td class="text-center">
+                <?php foreach ($hotels as $hotel) { ?>
+                    <tr>
+                        <td><?php echo $hotel["name"]; ?></td>
+                        <td><?php echo $hotel["description"]; ?></td>
+                        <td>
                             <?php if ($hotel["parking"] == true) { ?>
                                 <p class="text-success">Disponibile</p>
                             <?php } else { ?>
                                 <p class="text-danger">Non disponibile</p>
                             <?php } ?>
                         </td>
-                    <?php } ?>
-                </tr>
-                <tr>
-                    <th>Voto</th>
-                    <?php foreach ($hotels as $hotel) { ?>
-                        <td class="text-center text-warning"><?php echo $hotel["vote"]; ?> / 5 &#9733;</td>
-                    <?php } ?>
-                </tr>
-                <tr>
-                    <th>Distanza dal centro</th>
-                    <?php foreach ($hotels as $hotel) { ?>
-                        <td class="text-center"><?php echo $hotel["distance_to_center"]; ?> km</td>
-                    <?php } ?>
-                </tr>
+                        <td class="text-warning"><?php echo $hotel["vote"]; ?> / 5 &#9733;</td>
+                        <td><?php echo $hotel["distance_to_center"]; ?> km</td>
+                    </tr>
+                <?php } ?>
             </tbody>
         </table>
     </div>
